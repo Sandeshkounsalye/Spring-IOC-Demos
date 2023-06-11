@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="task1" class="com.bylist.Task">
+		<property name="taskId" value="888"></property>
+		<property name="taskName" value="Online prog"></property>
+	</bean>
+	<bean id="task2" class="com.bylist.Task">
+		<property name="taskId" value="777"></property>
+		<property name="taskName" value="Desktop prog"></property>
+	</bean>
+
+
+	<bean id="empObj" class="com.bylist.Employee">
+		<constructor-arg name="empId" value="101" type="int"
+			index="0"></constructor-arg>
+		<constructor-arg name="empName" value="sandesh"
+			type="String" index="1"></constructor-arg>
+		<constructor-arg name="empSalery" value="65000"
+			type="double" index="2"></constructor-arg>
+		<constructor-arg name="listOfList" index="3">
+			<list>
+				<ref bean="task1"/>
+				<ref bean="task2"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>
